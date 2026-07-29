@@ -217,7 +217,7 @@
   padding: 0 !important;
   color: var(--jcp-text) !important;
   font-size: 13px !important;
-  line-height: 1.40 !important;
+  line-height: 1.45 !important;
   text-align: justify !important;
   white-space: pre-line !important;
 }
@@ -225,7 +225,7 @@
 /* Capitular aplicada ao primeiro caractere do texto corrido. */
 .jcp5-body::first-letter {
   float: left !important;
-  margin: 10px 10px 5px 0 !important;
+  margin: 4px 12px 2px 0 !important;
   color: var(--jcp-color) !important;
   font-family: "JCP-Capo", var(--decorfont, "capo"), Georgia, serif !important;
   font-size: 96px !important;
