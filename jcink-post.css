@@ -1,0 +1,261 @@
+/* =========================================================
+   JCINK POST TEMPLATE — medieval responsive
+   Hospede este arquivo no GitHub Pages ou carregue via jsDelivr.
+   ========================================================= */
+
+@font-face {
+  font-family: "Garamontio Capo";
+  src: url("https://files.jcink.net/uploads2/feastforcrows/Garamontio_Capo.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.jc-post,
+.jc-post * {
+  box-sizing: border-box;
+}
+
+.jc-post {
+  /* Usa as cores do fórum/grupo e mantém fallbacks seguros. */
+  --jcp-bg: var(--mainbg, #171615);
+  --jcp-bg-soft: var(--bgshade2, #1b1b1b);
+  --jcp-border: var(--mainborder, #42403f);
+  --jcp-border-soft: var(--border2, rgba(255,255,255,.08));
+  --jcp-accent: var(--accent, #786f65);
+  --jcp-accent-text: var(--accenttxt, var(--accent, #9d9184));
+  --jcp-title: var(--txttitle, #d5d2ce);
+  --jcp-text: var(--txt1, #a7a6a3);
+  --jcp-link: var(--links, #d4d1cc);
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  padding: clamp(18px, 4vw, 42px);
+  overflow: hidden;
+
+  color: var(--jcp-text);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.018), transparent 34%),
+    var(--jcp-bg);
+  border: 1px solid var(--jcp-border);
+
+  font-family: var(--serif1, "Cardo", Georgia, serif);
+  font-size: clamp(13px, 1.55vw, 15px);
+  line-height: 1.85;
+  text-align: justify;
+}
+
+.jc-post__header {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: clamp(18px, 4vw, 34px);
+  align-items: center;
+  width: 100%;
+}
+
+.jc-post__avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--jcp-border);
+  border-radius: 50%;
+  background: var(--jcp-bg-soft);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--jcp-accent) 20%, transparent);
+}
+
+.jc-post__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  filter: grayscale(.15) brightness(.82) contrast(1.04);
+}
+
+.jc-post__meta {
+  min-width: 0;
+}
+
+.jc-post__eyebrow {
+  display: block;
+  margin: 0 0 2px;
+  color: var(--jcp-text);
+  font-family: var(--mono, "Space Grotesk", Arial, sans-serif);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.jc-post__name {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 6px;
+  overflow-wrap: anywhere;
+  color: var(--jcp-title);
+  border-bottom: 1px solid var(--jcp-accent);
+  font-family: var(--serif2, "Old Standard TT", Georgia, serif);
+  font-size: clamp(17px, 3vw, 24px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+.jc-post__notes {
+  margin-top: 10px;
+  color: var(--jcp-text);
+  font-family: var(--mono, "Space Grotesk", Arial, sans-serif);
+  font-size: 8px;
+  line-height: 1.65;
+  letter-spacing: .55px;
+  text-transform: uppercase;
+}
+
+.jc-post__notes strong {
+  color: var(--jcp-title);
+  font-weight: 800;
+  border-bottom: 1px solid var(--jcp-accent);
+}
+
+.jc-post__divider {
+  width: 100%;
+  height: 1px;
+  margin: clamp(22px, 5vw, 36px) 0;
+  background: linear-gradient(90deg, transparent, var(--jcp-border), transparent);
+}
+
+.jc-post__quote {
+  position: relative;
+  width: min(92%, 680px);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 6vw, 48px);
+  color: var(--jcp-link);
+  font-family: var(--serif3, "EB Garamond", Georgia, serif);
+  font-size: clamp(15px, 2.2vw, 18px);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.jc-post__quote::before,
+.jc-post__quote::after {
+  position: absolute;
+  color: var(--jcp-accent-text);
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 4vw, 34px);
+  font-style: normal;
+  line-height: 1;
+  opacity: .9;
+}
+
+.jc-post__quote::before {
+  content: "“";
+  left: 0;
+  top: -.08em;
+}
+
+.jc-post__quote::after {
+  content: "”";
+  right: 0;
+  bottom: -.22em;
+}
+
+.jc-post__body {
+  width: 100%;
+  margin-top: clamp(28px, 6vw, 48px);
+}
+
+.jc-post__body p {
+  margin: 0 0 1.35em;
+}
+
+.jc-post__body p:last-child {
+  margin-bottom: 0;
+}
+
+.jc-post__body .jc-dropcap::first-letter {
+  float: left;
+  margin: .05em .10em -.12em 0;
+  color: var(--jcp-accent-text);
+  font-family: "Garamontio Capo", var(--decorfont, "capo"), Georgia, serif;
+  font-size: clamp(72px, 12vw, 108px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: .72;
+  text-shadow: 0 0 18px color-mix(in srgb, var(--jcp-accent) 24%, transparent);
+}
+
+.jc-post__body strong,
+.jc-post__body b {
+  color: var(--jcp-title);
+  font-weight: 700;
+}
+
+.jc-post__body em,
+.jc-post__body i {
+  color: var(--jcp-link);
+}
+
+.jc-post__body a {
+  color: var(--jcp-accent-text);
+  text-decoration-color: var(--jcp-accent);
+  text-underline-offset: 3px;
+}
+
+.jc-post__highlight {
+  display: inline;
+  padding: 2px 6px;
+  color: var(--jcp-title);
+  background: color-mix(in srgb, var(--jcp-accent) 18%, var(--jcp-bg-soft));
+  border-left: 2px solid var(--jcp-accent);
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .jc-post {
+    padding: 18px;
+    text-align: left;
+  }
+
+  .jc-post__header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 15px;
+  }
+
+  .jc-post__meta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .jc-post__name {
+    text-align: center;
+  }
+
+  .jc-post__quote {
+    width: 100%;
+    padding-inline: 28px;
+  }
+}
+
+/* Fallback para navegadores sem color-mix(). */
+@supports not (color: color-mix(in srgb, white, black)) {
+  .jc-post__avatar {
+    box-shadow: 0 0 24px rgba(0,0,0,.25);
+  }
+
+  .jc-post__body .jc-dropcap::first-letter {
+    text-shadow: 0 0 18px rgba(0,0,0,.28);
+  }
+
+  .jc-post__highlight {
+    background: var(--jcp-bg-soft);
+  }
+}
