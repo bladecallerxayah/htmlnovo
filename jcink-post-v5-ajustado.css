@@ -225,17 +225,14 @@
 /* Capitular aplicada ao primeiro caractere do texto corrido. */
 .jcp5-body::first-letter {
   float: left !important;
+  margin: 2px 16px 0 0 !important;
 
   color: var(--jcp-color) !important;
   font-family: "JCP-Capo", var(--decorfont, "capo"), Georgia, serif !important;
-
   font-size: 100px !important;
-  line-height: .92 !important;
-
-  margin: 2px 16px 6px 0 !important;
-
   font-style: normal !important;
   font-weight: 400 !important;
+  line-height: .78 !important;
 }
 
 /* Fala inline: não força nova linha e pode aparecer no meio da narração. */
