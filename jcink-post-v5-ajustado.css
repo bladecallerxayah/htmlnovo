@@ -1,0 +1,296 @@
+/* JCINK POST V5 AJUSTADO
+   Mantém a V5 e altera somente:
+   1) imagem como moldura externa;
+   2) texto com white-space: pre-line;
+   3) fala inline com <span>.
+*/
+
+@font-face {
+  font-family: "JCP-Capo";
+  src: url("https://files.jcink.net/uploads2/feastforcrows/Garamontio_Capo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.jcp5-frame,
+.jcp5-frame *,
+.jcp5,
+.jcp5 * {
+  box-sizing: border-box !important;
+}
+
+/* A imagem fica SOMENTE na moldura externa. */
+.jcp5-frame {
+  --jcp-frame: none;
+  --jcp-color: #7e8d9b;
+  --jcp-bg: var(--mainbg, #171615);
+  --jcp-border: var(--mainborder, #42403f);
+
+  position: relative !important;
+  isolation: isolate !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  padding: clamp(28px, 6vw, 48px) !important;
+  overflow: hidden !important;
+  border: 1px solid var(--jcp-border) !important;
+  background: #090909 !important;
+}
+
+.jcp5-frame::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  background-image: var(--jcp-frame) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  filter: grayscale(100%) brightness(38%) contrast(118%) !important;
+  opacity: .92 !important;
+  pointer-events: none !important;
+}
+
+.jcp5-frame::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background:
+    radial-gradient(circle at 18% 12%, color-mix(in srgb, var(--jcp-color) 12%, transparent), transparent 36%),
+    linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.35)) !important;
+  pointer-events: none !important;
+}
+
+.jcp5 {
+  --jcp-title: var(--txttitle, #d5d2ce);
+  --jcp-text: var(--txt1, #aaa7a3);
+  --jcp-link: var(--links, #d4d1cc);
+
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  padding: clamp(24px, 5vw, 44px) !important;
+  overflow: hidden !important;
+  border: 1px solid var(--jcp-border) !important;
+  background: var(--jcp-bg) !important;
+  color: var(--jcp-text) !important;
+  font-family: var(--serif1, "Cardo", Georgia, serif) !important;
+  font-size: 13px !important;
+  line-height: 1.32 !important;
+  text-align: left !important;
+}
+
+/* Cabeçalho V5 preservado. */
+.jcp5-head {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(18px, 4vw, 34px) !important;
+  width: min(100%, 610px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.jcp5-avatar {
+  flex: 0 0 100px !important;
+  display: block !important;
+  width: 100px !important;
+  height: 100px !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  overflow: hidden !important;
+  border: 1px solid color-mix(in srgb, var(--jcp-color) 55%, var(--jcp-border)) !important;
+  border-radius: 50% !important;
+  background: var(--jcp-bg) !important;
+  box-shadow: 0 0 22px color-mix(in srgb, var(--jcp-color) 18%, transparent) !important;
+}
+
+.jcp5-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+.jcp5-meta {
+  flex: 0 1 410px !important;
+  display: block !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.jcp5-overline {
+  display: block !important;
+  margin: 0 0 4px !important;
+  color: var(--jcp-text) !important;
+  font-family: var(--mono, "Space Grotesk", Arial, sans-serif) !important;
+  font-size: 7px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 1.7px !important;
+  text-transform: uppercase !important;
+}
+
+.jcp5-name {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 0 6px !important;
+  border-bottom: 1px solid var(--jcp-color) !important;
+  color: var(--jcp-title) !important;
+  font-family: var(--serif2, "Old Standard TT", Georgia, serif) !important;
+  font-size: clamp(17px, 3vw, 21px) !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+}
+
+.jcp5-notes {
+  display: block !important;
+  margin: 7px 0 0 !important;
+  color: var(--jcp-text) !important;
+  font-family: var(--mono, "Space Grotesk", Arial, sans-serif) !important;
+  font-size: 7px !important;
+  line-height: 1.15 !important;
+  letter-spacing: .2px !important;
+  text-transform: uppercase !important;
+}
+
+.jcp5-notes b { color: var(--jcp-title) !important; }
+
+.jcp5-rule {
+  display: block !important;
+  width: 100% !important;
+  height: 1px !important;
+  margin: 28px 0 22px !important;
+  background: linear-gradient(90deg, transparent, var(--jcp-border), transparent) !important;
+}
+
+.jcp5-quote {
+  position: relative !important;
+  display: block !important;
+  width: min(90%, 560px) !important;
+  margin: 0 auto !important;
+  padding: 0 26px !important;
+  color: var(--jcp-link) !important;
+  font-family: var(--serif3, "EB Garamond", Georgia, serif) !important;
+  font-size: 13px !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+}
+
+.jcp5-quote::before,
+.jcp5-quote::after {
+  position: absolute !important;
+  color: var(--jcp-color) !important;
+  font-family: Georgia, serif !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  line-height: 1 !important;
+  opacity: .8 !important;
+}
+
+.jcp5-quote::before { content: "“"; left: 0; top: -1px; }
+.jcp5-quote::after { content: "”"; right: 0; bottom: -4px; }
+
+/* Agora basta apertar Enter no texto. */
+.jcp5-body {
+  display: block !important;
+  width: 100% !important;
+  margin: 24px 0 0 !important;
+  padding: 0 !important;
+  color: var(--jcp-text) !important;
+  font-size: 13px !important;
+  line-height: 1.32 !important;
+  text-align: justify !important;
+  white-space: pre-line !important;
+}
+
+/* Capitular aplicada ao primeiro caractere do texto corrido. */
+.jcp5-body::first-letter {
+  float: left !important;
+  margin: 7px 10px -10px 0 !important;
+  color: var(--jcp-color) !important;
+  font-family: "JCP-Capo", var(--decorfont, "capo"), Georgia, serif !important;
+  font-size: 96px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: .62 !important;
+}
+
+/* Fala inline: não força nova linha e pode aparecer no meio da narração. */
+.jcp5-speech {
+  display: inline !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+  background: color-mix(in srgb, var(--jcp-color) 18%, rgba(255,255,255,.035)) !important;
+  color: var(--jcp-title) !important;
+  font-family: var(--serif2, "Old Standard TT", Georgia, serif) !important;
+  font-size: .96em !important;
+  font-weight: 400 !important;
+  line-height: inherit !important;
+  text-align: inherit !important;
+  box-decoration-break: clone !important;
+  -webkit-box-decoration-break: clone !important;
+}
+
+.jcp5-speech i {
+  color: inherit !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+.jcp5 b,
+.jcp5 strong {
+  color: var(--jcp-title) !important;
+  font-weight: 700 !important;
+}
+
+.jcp5 a {
+  color: var(--jcp-color) !important;
+  text-underline-offset: 2px !important;
+}
+
+@media (max-width: 520px) {
+  .jcp5-frame { padding: 22px 16px !important; }
+  .jcp5 { padding: 22px 16px !important; }
+  .jcp5-head { gap: 15px !important; }
+  .jcp5-avatar {
+    flex-basis: 82px !important;
+    width: 82px !important;
+    height: 82px !important;
+  }
+  .jcp5-name { font-size: 16px !important; }
+  .jcp5-quote { width: 96% !important; font-size: 12.5px !important; }
+  .jcp5-body { font-size: 12.5px !important; line-height: 1.3 !important; }
+  .jcp5-body::first-letter { font-size: 60px !important; }
+}
+
+@media (max-width: 390px) {
+  .jcp5-head {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  .jcp5-meta {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .jcp5-overline,
+  .jcp5-notes { text-align: center !important; }
+}
