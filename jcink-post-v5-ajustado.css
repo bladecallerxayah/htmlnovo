@@ -225,7 +225,7 @@
 /* Capitular aplicada ao primeiro caractere do texto corrido. */
 .jcp5-body::first-letter {
   float: left !important;
-  margin: 0px 10px -3px 0 !important;
+  margin: 10px 10px 5px 0 !important;
   color: var(--jcp-color) !important;
   font-family: "JCP-Capo", var(--decorfont, "capo"), Georgia, serif !important;
   font-size: 96px !important;
