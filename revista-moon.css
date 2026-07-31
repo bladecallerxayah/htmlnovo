@@ -19,26 +19,20 @@
   margin: 25px auto;
   padding: 35px;
   overflow: hidden;
-
   background: var(--rm-background);
   color: var(--rm-text);
-
   font-family: Verdana, Arial, sans-serif;
   text-align: left;
 }
-
-/* Cabeçalho */
 
 .rm-magazine-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-
   padding: 7px 0 6px;
   border-top: 3px solid var(--rm-line);
   border-bottom: 3px solid var(--rm-line);
-
   color: var(--rm-text);
   font-family: "Times New Roman", Times, serif;
   font-size: 10px;
@@ -52,12 +46,9 @@
   text-align: right;
 }
 
-/* Título principal */
-
 .rm-magazine-title {
   padding: 20px 0;
   border-bottom: 1px solid var(--rm-line);
-
   color: var(--rm-text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(32px, 6vw, 50px);
@@ -74,13 +65,10 @@
   background: var(--rm-line);
 }
 
-/* Seções */
-
 .rm-magazine-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 250px;
   gap: 25px;
-
   width: 100%;
   padding: 20px 0;
   border-bottom: 4px solid var(--rm-line);
@@ -94,15 +82,12 @@
   grid-template-columns: minmax(0, 1fr) 350px;
 }
 
-/* Textos */
-
 .rm-magazine-content {
   min-width: 0;
 }
 
 .rm-magazine-subtitle {
   margin: 0 0 9px;
-
   color: var(--rm-text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 20px;
@@ -114,7 +99,6 @@
 
 .rm-magazine-text {
   margin: 0;
-
   color: var(--rm-text);
   font-family: Verdana, Arial, sans-serif;
   font-size: 11px;
@@ -123,42 +107,23 @@
   text-align: justify;
 }
 
-/* Imagens */
-
 .rm-magazine-image {
   width: 100%;
   min-height: 300px;
-
   background-color: #d5d5d5;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.rm-magazine-image.rm-group-image {
-  background-image:
-    url("https://portalpopline.com.br/wp-content/uploads/2018/08/girls-generation-800x504.jpg");
-}
-
 .rm-magazine-image.rm-profile-image {
   min-height: 430px;
-
-  background-image:
-    url("https://cdn.filestackcontent.com/YtYAoZPS5WQklLcJqdC2/convert?cache=true&crop=0%2C406%2C1792%2C896&crop_first=true&quality=90&w=1920");
 }
-
-.rm-magazine-image.rm-duo-image {
-  background-image:
-    url("https://pbs.twimg.com/media/FK_9jfkaIAE68ny?format=jpg&name=4096x4096");
-}
-
-/* Ficha da personagem */
 
 .rm-profile-list {
   display: flex;
   flex-direction: column;
   gap: 7px;
-
   margin: 0;
   padding: 25px;
 }
@@ -171,13 +136,10 @@
 
 .rm-profile-label {
   flex: 0 0 auto;
-
   padding: 4px 6px 3px;
   border-radius: 3px;
-
   background: var(--rm-label-background);
   color: var(--rm-label-text);
-
   font-family: "Times New Roman", Times, serif;
   font-size: 9px;
   font-weight: bold;
@@ -188,7 +150,6 @@
 
 .rm-profile-value {
   padding-top: 3px;
-
   color: var(--rm-text);
   font-family: "Times New Roman", Times, serif;
   font-size: 9px;
@@ -197,8 +158,6 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
-/* Crédito */
 
 .rm-magazine-credit {
   width: 700px;
@@ -213,8 +172,6 @@
   font-size: 7px;
   text-decoration: none;
 }
-
-/* Responsividade */
 
 @media screen and (max-width: 720px) {
   .rm-magazine {
