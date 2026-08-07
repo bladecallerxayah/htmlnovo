@@ -217,7 +217,7 @@
   padding: 0 !important;
   color: var(--jcp-text) !important;
   font-size: 13px !important;
-  line-height: 1.36 !important;
+  line-height: 1.50 !important;
   text-align: justify !important;
   white-space: pre-line !important;
 }
@@ -228,7 +228,7 @@
   margin: 7px 10px -10px 0 !important;
   color: var(--jcp-color) !important;
   font-family: "JCP-Capo", var(--decorfont, "capo"), Georgia, serif !important;
-  font-size: 96px !important;
+  font-size: 110px !important;
   font-style: normal !important;
   font-weight: 400 !important;
   line-height: .62 !important;
